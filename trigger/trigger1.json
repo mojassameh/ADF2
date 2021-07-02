@@ -14,6 +14,7 @@
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/root/blobs/",
+			"blobPathEndsWith": "csv",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/deceedcd-3987-458d-80e0-65203599db64/resourceGroups/weu-july-02/providers/Microsoft.Storage/storageAccounts/weutestmajidadls01",
 			"events": [
