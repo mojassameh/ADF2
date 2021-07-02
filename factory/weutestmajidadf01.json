@@ -1,0 +1,9 @@
+{
+	"name": "weutestmajidadf01",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "82650386-4c49-4ed9-8c80-7cce260dfb33",
+		"tenantId": "81b39264-0a31-4754-98d2-bce72b799839"
+	}
+}
