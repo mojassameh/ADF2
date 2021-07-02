@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_weutestmajidadls01_staging",
+						"referenceName": "ds_weutestmajidadls01_staging_parameterless",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
