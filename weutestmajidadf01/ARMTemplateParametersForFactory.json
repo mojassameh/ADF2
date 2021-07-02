@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "weutestmajidadf01"
+		},
+		"ls_weutestmajidadls01_01_accountKey": {
+			"value": ""
+		},
+		"ls_weutestmajidadls01_01_properties_typeProperties_url": {
+			"value": "https://weutestmajidadls01.dfs.core.windows.net"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/deceedcd-3987-458d-80e0-65203599db64/resourceGroups/weu-july-02/providers/Microsoft.Storage/storageAccounts/weutestmajidadls01"
+		}
+	}
+}
