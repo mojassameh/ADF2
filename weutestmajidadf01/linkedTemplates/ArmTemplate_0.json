@@ -252,7 +252,7 @@
 											"type": "DelimitedTextSource",
 											"storeSettings": {
 												"type": "AzureBlobFSReadSettings",
-												"recursive": true,
+												"recursive": false,
 												"enablePartitionDiscovery": false
 											},
 											"formatSettings": {
@@ -302,6 +302,51 @@
 											}
 										}
 									]
+								},
+								{
+									"name": "Delete1",
+									"type": "Delete",
+									"dependsOn": [
+										{
+											"activity": "Copy from staging to raw",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"dataset": {
+											"referenceName": "ds_weutestmajidadls01_staging",
+											"type": "DatasetReference",
+											"parameters": {
+												"filename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
+											}
+										},
+										"logStorageSettings": {
+											"linkedServiceName": {
+												"referenceName": "ls_weutestmajidadls01_01",
+												"type": "LinkedServiceReference"
+											},
+											"path": "root/curated"
+										},
+										"enableLogging": true,
+										"storeSettings": {
+											"type": "AzureBlobFSReadSettings",
+											"recursive": false,
+											"enablePartitionDiscovery": false
+										}
+									}
 								}
 							]
 						}
@@ -315,7 +360,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_weutestmajidadls01_staging_parameterless')]",
 				"[concat(variables('factoryId'), '/datasets/ds_weutestmajidadls01_staging')]",
-				"[concat(variables('factoryId'), '/datasets/ds_weutestmajidadls01_raw')]"
+				"[concat(variables('factoryId'), '/datasets/ds_weutestmajidadls01_raw')]",
+				"[concat(variables('factoryId'), '/linkedServices/ls_weutestmajidadls01_01')]"
 			]
 		},
 		{
